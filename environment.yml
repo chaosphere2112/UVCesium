@@ -1,0 +1,152 @@
+name: uvcdat
+dependencies:
+- backports=1.0=py27_0
+- backports_abc=0.4=py27_0
+- cffi=1.7.0=py27_0
+- cloog=0.18.0=0
+- cryptography=1.5=py27_0
+- curl=7.49.0=1
+- enum34=1.1.6=py27_0
+- freetype=2.5.5=1
+- gmp=5.1.2=6
+- idna=2.1=py27_0
+- ipaddress=1.0.16=py27_0
+- isl=0.12.2=1
+- jbig=2.1=0
+- jpeg=8d=1
+- libpng=1.6.17=0
+- libtiff=4.0.6=2
+- matplotlib=1.4.3=np19py27_3
+- mkl=11.3.3=0
+- mpc=1.0.1=0
+- mpfr=3.1.2=0
+- nose=1.3.7=py27_1
+- numpy=1.9.2=py27_2
+- openssl=1.0.2h=2
+- pip=8.1.2=py27_0
+- pyasn1=0.1.9=py27_0
+- pycparser=2.14=py27_1
+- pyopenssl=16.0.0=py27_0
+- pyparsing=2.0.3=py27_0
+- pyqt=4.11.4=py27_4
+- python=2.7.12=1
+- python-dateutil=2.5.3=py27_0
+- pytz=2016.6.1=py27_0
+- qt=4.8.7=4
+- readline=6.2=2
+- requests=2.11.1=py27_0
+- scikit-learn=0.16.1=np19py27_0
+- scipy=0.17.1=np19py27_1
+- setuptools=26.1.1=py27_0
+- singledispatch=3.4.0.3=py27_0
+- sip=4.18=py27_0
+- six=1.10.0=py27_0
+- sqlite=3.13.0=0
+- ssl_match_hostname=3.4.0.2=py27_1
+- tk=8.5.18=0
+- tornado=4.4.1=py27_0
+- uvcdat/label/nightly::cdat_info=2016.6.23=UVCDAT
+- uvcdat/label/nightly::cdms2=2016.6.10=UVCDAT
+- uvcdat/label/nightly::libcdms=2016.6.10=UVCDAT
+- uvcdat/label/nightly::regrid2=2016.6.9=UVCDAT
+- uvcdat/label/nightly::thermo=2016.6.15=UVCDAT
+- uvcdat/label/nightly::uvcdat=2016.6.27=UVCDAT
+- uvcdat/label/nightly::uvcmetrics=2016.9.1=UVCDAT
+- uvcdat/label/nightly::vcs=2016.9.1=UVCDAT
+- uvcdat/label/nightly::vcsaddons=2016.8.16=UVCDAT
+- uvcdat/label/nightly::xmgrace=2016.6.15=UVCDAT
+- uvcdat::asciidata=2.6=UVCDAT
+- uvcdat::binaryio=2.6.1=UVCDAT
+- uvcdat::cd77=1.0.0=UVCDAT
+- uvcdat::cdtime=2.6.1=UVCDAT
+- uvcdat::cdutil=2.6=UVCDAT
+- uvcdat::clapack=3.2.1=UVCDAT
+- uvcdat::cmor=2.9.2=PCMDI
+- uvcdat::cssgrid=2.6.1=UVCDAT
+- uvcdat::distarray=2.6=UVCDAT
+- uvcdat::dsgrid=2.6=UVCDAT
+- uvcdat::dv3d=2.6=UVCDAT
+- uvcdat::esg=2.6=UVCDAT
+- uvcdat::esmf=ESMF_6_3_0rp1_ESMP_01=UVCDAT
+- uvcdat::ezget=1.0.1=UVCDAT
+- uvcdat::eztemplate=2.6=UVCDAT
+- uvcdat::ffmpeg=2.7.0=UVCDAT
+- uvcdat::g2clib=1.4.0b=UVCDAT
+- uvcdat::genutil=2.6=UVCDAT
+- uvcdat::gfortran=4.9.3=1
+- uvcdat::hdf5=1.8.16=UVCDAT
+- uvcdat::hdf5tools=2.6=UVCDAT
+- uvcdat::jasper=1.900.1=UVCDAT
+- uvcdat::lapack=3.4.2=UVCDAT
+- uvcdat::lats=1.0.1=UVCDAT
+- uvcdat::libcf=1.0.beta11=UVCDAT
+- uvcdat::libdrs_c=1.0.1=UVCDAT
+- uvcdat::libdrs_f=1.0.1=UVCDAT
+- uvcdat::libnetcdf=4.3.3.1=UVCDAT
+- uvcdat::lmoments=2.6.1=UVCDAT
+- uvcdat::natgrid=2.6=UVCDAT
+- uvcdat::ort=2.6.1=UVCDAT
+- uvcdat::ossuuid=1.6.2=UVCDAT
+- uvcdat::output_viewer=1.0.5=py27_0
+- uvcdat::proj4=4.9.2=UVCDAT
+- uvcdat::pydebug=2.6=UVCDAT
+- uvcdat::regridpack=2.6.1=UVCDAT
+- uvcdat::shgrid=2.6.1=UVCDAT
+- uvcdat::spherepack=2.6.1=UVCDAT
+- uvcdat::trends=2.6=UVCDAT
+- uvcdat::udunits2=2.2.17=UVCDAT
+- uvcdat::unidata=2.6=UVCDAT
+- uvcdat::vistrails=master=UVCDAT
+- uvcdat::vtk=7.1.0.2.6=uvcdat_master
+- uvcdat::wk=2.6=UVCDAT
+- uvcdat::x264=20151006.2245=UVCDAT
+- uvcdat::yasm=1.2.0=UVCDAT
+- uvcdat::zonalmeans=2.6.1=UVCDAT
+- wheel=0.29.0=py27_0
+- xz=5.2.2=0
+- zlib=1.2.8=3
+- pip:
+  - adamsregrid==0.0.0
+  - asciidata-Wed.Jun.29.23-06==17.2016
+  - backports-abc==0.4
+  - backports.ssl-match-hostname==3.4.0.2
+  - binaryio==0.0.0
+  - cd77==1.0
+  - cdat-info==0.0.0
+  - cdms==1.0
+  - cdms2==5.0
+  - cdtime==3.2
+  - cdutil-==
+  - cmor==2.0
+  - distarray==1.0
+  - dsgrid==1.0
+  - dv3d==0.0.0
+  - esg==1.0
+  - eztemplate==1.0
+  - genutil-==
+  - hdf5tools==1.0
+  - libcf==1.0b11
+  - lmoments==0.0.0
+  - ma==1.0
+  - metrics==1.0.0
+  - mv==1.0
+  - mv2==1.0
+  - natgrid==1.0
+  - ort==0.0.0
+  - output-viewer==1.0.5
+  - pydebug==1.5.4
+  - regrid==1.0
+  - regrid2==3.3
+  - sh==0.0.0
+  - sphere==0.0.0
+  - thermo==1.0
+  - trends==0.0.0
+  - udunits==1.0
+  - unknown==0.0.0
+  - vcs==2.6
+  - vcsaddons==0.9
+  - wk==1.0
+  - xmgrace==1.1
+  - zonalmeans==1.0
+prefix: /Users/samfries/anaconda/envs/uvcdat
+
