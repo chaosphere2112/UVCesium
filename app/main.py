@@ -30,6 +30,19 @@ class MainHandler(tornado.web.RequestHandler):
             self.write(ind.read())
 
 
+class FileMetaHandler(tornado.web.RequestHandler):
+    """Retrieves variable info from NC file"""
+
+    def get(self):
+        filename = self.get_argument("file")
+        filename = os.path.basename(filename)
+        try:
+            f = cdms2.open(os.path.join(vcs.sample_data, filename))
+            self.write({"variables": [vid for vid in f.variables]})
+        except:
+            self.write("Failed to find file")
+
+
 class NCMetaHandler(tornado.web.RequestHandler):
     """Retrieves grid info for a nc file."""
 
@@ -46,16 +59,13 @@ class NCMetaHandler(tornado.web.RequestHandler):
             g = s.getGrid()
             # number of cells, lat/lon, number of points per cel
             m = g.getMesh()
-            num_points_per_cell = m.shape[2]
             # So we need to reshape it to have a flat array
             # We'll reshape to look like this:
             # [ [[lon, lat], [lon, lat], ...], [[lon, lat], [lon, lat], ...], ...]
-
             # First, flip lat and lon arrays
             flipped = numpy.fliplr(m)
             # Then transpose into lon/lat pairs
             transposed = numpy.transpose(flipped, [0, 2, 1])
-
             write_array(transposed, self)
         except:
             self.write("Failed to find file/variable.")
@@ -76,17 +86,22 @@ class NCDataHandler(tornado.web.RequestHandler):
         try:
             f = cdms2.open(os.path.join(vcs.sample_data, filename))
             s = f(varname)
-            write_array(s[int(timeslice)], self)
+            if s.getTime():
+                write_array(s[int(timeslice)], self)
+            else:
+                write_array(s, self)
         except:
             self.write("Failed to find file/variable/time")
 
 
 def make_app():
     """Generate WSGI app."""
-    return tornado.web.Application([
+    return tornado.web.Application(
+        [
             (r"/", MainHandler),
             (r"/data/meta", NCMetaHandler),
-            (r"/data", NCDataHandler)
+            (r"/data", NCDataHandler),
+            (r"/file", FileMetaHandler),
         ],
         static_path=os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                  "static"),

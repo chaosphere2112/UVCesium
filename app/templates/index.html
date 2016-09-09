@@ -3,6 +3,7 @@
 	<head>
 		<link href="/static/deps/Cesium/Widgets/widgets.css" rel="stylesheet">
 		<script src="/static/deps/Cesium/Cesium.js" type="text/javascript"></script>
+		<script src="/static/cdat/cdms.js" type="text/javascript"></script>
 		<script src="/static/cdat/vcs.js" type="text/javascript"></script>
 	</head>
 	<body>
@@ -10,7 +11,11 @@
 		<script type="text/javascript">
 		// Point to the element you want to embed the canvas in
 		var canvas = vcs.init("cesiumContainer");
-		var displays = canvas.boxfill("clt.nc", "clt");
+		var f = cdms.open("clt.nc");
+		var clt = f.getVariable("clt");
+		clt.then(function(variable) {
+			var displays = canvas.boxfill(variable);
+		});
 		</script>
 	</body>
 </html>
